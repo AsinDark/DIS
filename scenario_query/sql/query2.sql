@@ -1,0 +1,1 @@
+SELECT id_p, title, count(*) FROM Position JOIN (SELECT * FROM Vacancy WHERE year(open_date) = '$year') AS v ON id_p = v.v_id_p GROUP BY id_p;

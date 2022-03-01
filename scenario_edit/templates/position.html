@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+    <title>Список позиций штатного расписания</title>
+    {% endblock %}
+</head>
+<body>
+<div align="center">
+    <h2>Список позиций штатного расписания</h2>
+    <table class="table-hover" border="0" cellpadding="5">
+            {% for head in heads %}
+            <th align="center">{{ head }}</th>
+            {% endfor %}
+        {% for item in context %}
+            <tr align="center">
+                <td> {{ item['title'] }} </td>
+                <td> {{ item['min_salary'] }} </td>
+                <td> {{ item['max_salary'] }} </td>
+                <td>
+                    <form action="" method="post">
+                        <input type="hidden" name="id_p" value="{{ item['id_p'] }}">
+                        <button class="btn btn-danger" type="submit" name="action" onclick="return confirm('Вы уверены, что хотите удалить эту строку из базы данных?')">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <h2><a class="nav-link" href="/edit/position/insert_position">Добавить позицию штатного расписания</a></h2>
+    <h2><a class="nav-link" href = "/edit">Назад</a></h2>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+    <title>Main menu</title>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <div align="center">
+        <h1>Главное меню</h1>
+        <h1>Информационной системы Штатное расписание</h1>
+        {% if session['group_name'] == unauthorized %}
+            <h2>Вы не авторизованы!</h2>
+        {% else %}
+            <h2>Добро пожаловать, {{ session['group_name'] }}!</h2>
+        {% endif %}
+        <nav class="nav flex-column">
+        <h2><a class="nav-link" href="/auth">Авторизация</a></h2>
+        <h2><a class="nav-link" href="/queries">Работа с запросами</a></h2>
+        <h2><a class="nav-link" href="/edit">Прием и увольнение работников</a></h2>
+        <h2><a class="nav-link" href="/exit">Выход</a></h2>
+        </nav>
+        </div>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+    <title>Exit</title>
+    {% endblock %}
+</head>
+<p>
+    {% block content %}
+        <p><h2 align="center">До свидания! <br> Спасибо, что использовали нашу систему!</h2></p>
+    {% endblock %}
+</body>
+</html>

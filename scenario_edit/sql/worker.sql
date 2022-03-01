@@ -1,0 +1,1 @@
+SELECT * FROM SCHEDULE.Worker JOIN SCHEDULE.Position ON w_id_p=id_p;

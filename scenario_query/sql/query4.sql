@@ -1,0 +1,1 @@
+SELECT id_p, title, min_salary, max_salary FROM Position LEFT JOIN (SELECT * FROM  Vacancy WHERE YEAR(open_date) = '$year') AS v ON id_p = v.v_id_p WHERE id_v is NULL;

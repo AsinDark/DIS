@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+    <title>Result2</title>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+   <div align="center">
+   <h2>Результат запроса 2</h2>
+    <table class="table-bordered" border="1" cellpadding="5">
+        <tr align="center">
+            <th>Номер позиции штатного расписания</th>
+            <th>Название позиции штатного расписания</th>
+            <th>Сколько раз в течение года открывались вакансии на эту позицию</th>
+        </tr>
+        {% for dictionary in context %}
+            <tr align="center">
+                {% for value in dictionary.values() %}
+                    <td> {{ value }} </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <h2><a class="nav-link" href="/queries/query2">Назад</a></h2>
+    <h2><a class="nav-link" href="/queries">В меню запросов</a></h2>
+   </div>
+    {% endblock %}
+</body>
+</html>

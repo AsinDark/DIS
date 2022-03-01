@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+    <title>Valid log/pass</title>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <div align="center">
+        <h1>Авторизация прошла успешно</h1>
+        <h2><a class="nav-link" href = "/">В главное меню</a></h2>
+        </div>
+    {% endblock %}
+</body>
+</html>

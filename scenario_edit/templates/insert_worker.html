@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+    <title>Insert worker</title>
+    {% endblock %}
+</head>
+<body>
+    <h2 align="center">Добавление строки в таблицу "Работник"</h2>
+    <form action="" method="POST">
+    <div class="row justify-content-center" align="center">
+        <div class="col-1"></div>
+        <div class="col"><input class="form-control" type="text" name="name" placeholder="ФИО работника" required></div>
+        <div class="col"><input class="form-control" type="number" name="departament_number"  placeholder="Номер отдела" required></div>
+        <div class="col"><input class="form-control" type="date" name="birthday" title="Дата рождения" required></div>
+        <div class="col"><input class="form-control" type="text" name="adress" placeholder="Адрес прописки" required></div>
+        <div class="col"><input class="form-control" type="text" name="education" placeholder="Образование" required></div>
+        <div class="col"><input class="form-control" type="number" name="Salary" placeholder="Оклад"></div>
+        <div class="col"><input class="form-control" type="date" name="recruit_date" title="Дата приема на работу" required></div>
+        <div class="col-2"><input class="form-control" type="number" name="w_id_p" placeholder="ID позиции штатного расписания" required></div>
+        <div class="col-1"></div>
+    </div>
+        <br>
+        <div align="center"><button class="btn btn-primary" type="submit" name="insert">Добавить</button></div>
+    </form>
+
+    <br>
+
+    <div align="center">
+    <h2>Список позиций штатного расписания</h2>
+    <table class="table-hover" border="0" cellpadding="5">
+            {% for head in heads %}
+            <th align="center">{{ head }}</th>
+            {% endfor %}
+        {% for item in context %}
+            <tr align="center">
+                <td> {{ item['id_p'] }} </td>
+                <td> {{ item['title'] }} </td>
+                <td> {{ item['min_salary'] }} </td>
+                <td> {{ item['max_salary'] }} </td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+    <h2 align="center"><a class="nav-link" href="/edit/worker">Назад</a></h2>
+</body>
+</html>

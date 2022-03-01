@@ -1,0 +1,1 @@
+SELECT * FROM SCHEDULE.Vacancy JOIN SCHEDULE.Position ON v_id_p=id_p;

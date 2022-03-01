@@ -1,0 +1,22 @@
+{
+  "admin": [
+    "auth",
+    "edit",
+    ""
+  ],
+  "hr": [
+    "auth",
+    "queries",
+    "edit",
+    ""
+  ],
+  "boss": [
+    "auth",
+    "queries",
+    ""
+  ],
+  "unauthorized": [
+    "auth",
+    ""
+  ]
+}

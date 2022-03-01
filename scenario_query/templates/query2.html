@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+    <title>Query2</title>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div align="center">
+    <h2>Запрос 2</h2>
+    <p>Вывести номер позиции штатного расписания, название позиции и сколько раз в течение года открывались вакансии на эту позицию за указанный год.</p>
+    <form action="{{ url_for('queries.get_report_by_year') }}" method="get">
+        <p><div class="col-sm-2"><input class="form-control" type="number" name="year" placeholder="Год"></div></p>
+        <p><button class="btn btn-primary" type="submit">Вывести результат запроса 2</button></p>
+    </form>
+
+    <h2><a class="nav-link" href="/queries">Назад</a></h2>
+    </div>
+    {% endblock %}
+</body>
+</html>

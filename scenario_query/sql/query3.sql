@@ -1,0 +1,1 @@
+SELECT * FROM Worker WHERE birthday = (SELECT max(birthday) FROM Worker WHERE departament_number = '$number');

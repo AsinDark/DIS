@@ -1,0 +1,1 @@
+SELECT id_v, title, (TO_DAYS(curdate()) - TO_DAYS(open_date)) AS days FROM Vacancy JOIN Position ON v_id_p = id_p WHERE title = '$title';

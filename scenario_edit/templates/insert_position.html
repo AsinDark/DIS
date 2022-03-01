@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+    <title>Insert position</title>
+    {% endblock %}
+</head>
+<body>
+    <h2 align="center">Добавление строки в таблицу "Позиция штатного расписания"</h2>
+    <form action="" method="POST">
+    <div class="row justify-content-center">
+        <div class="col-2"><input class="form-control" type="text" name="title" placeholder="Название позиции" required></div>
+        <div class="col-2"><input class="form-control" type="number" name="min_salary"  placeholder="Минимальный оклад" required></div>
+        <div class="col-2"><input class="form-control" type="number" name="max_salary" placeholder="Максимальный оклад" required></div>
+    </div>
+        <br>
+        <div align="center"><button class="btn btn-primary" type="submit" name="insert">Добавить</button></div>
+    </form>
+
+<br>
+<h2 align="center"><a class="nav-link" href="/edit/position">Назад</a></h2>
+</body>
+</html>

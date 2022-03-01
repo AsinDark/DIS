@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+    <title>Login</title>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div align="center">
+    <h2>Авторизация в системе</h2>
+    <form action="" method="post">
+        <p><div class="col-sm-2"><input class="form-control" type="text" name="login" placeholder="Login" required></div>
+        <div class="col-sm-2"><input class="form-control" type="password" name="password" placeholder="Password" required></div></p>
+        <p><div class="col-sm-2"><button type="submit" class="btn btn-primary">Вход в систему</button></div></p>
+    </form>
+    <h2><a class="nav-link" href="/">Назад</a></h2>
+    </div>
+    {% endblock %}
+</body>
+</html>
